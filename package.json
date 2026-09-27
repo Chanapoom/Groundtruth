@@ -1,0 +1,42 @@
+{
+  "name": "groundtruth",
+  "private": true,
+  "version": "1.0.0",
+  "description": "What automations report vs. what they actually did — silent-failure detection for n8n/Make/Zapier workflows.",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently -n \"SERVER,CLIENT\" -c \"cyan.bold,magenta.bold\" \"npm run server\" \"npm run dev\"",
+    "dev": "vite",
+    "server": "node server/index.js",
+    "seed": "node server/db/seed.js",
+    "test": "vitest run",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.126.0",
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "node-cron": "^4.6.0",
+    "nodemailer": "^10.0.9",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "concurrently": "^10.0.5",
+    "oxlint": "^1.79.0",
+    "supertest": "^7.2.2",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
+  },
+  "allowScripts": {
+    "better-sqlite3@13.0.3": true
+  }
+}
